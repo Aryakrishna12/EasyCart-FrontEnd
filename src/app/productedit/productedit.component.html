@@ -1,0 +1,85 @@
+
+<div class="row">
+    <div class="col"></div>
+      <div class="col">
+        <h1 style="text-align: center;">Edit Product Form</h1>
+        <form [formGroup]="productEditForm" (ngSubmit)="edit()" style="margin-top: 10%;margin-left: 5%;">
+          <div class="mb-3">
+            
+              <label for="name" class="form-label"> Product Name</label>
+              <input type="text" class="form-control" id="productName" formControlName="productName" name="productName" >
+              <div *ngIf="this.productEditForm.get('productName')?.touched && f.productName.errors?.required" class="error">Can not be Empty
+              </div>
+              <div *ngIf="this.productEditForm.controls['productName'].errors?.pattern" class="error">Invalid Product Name </div>
+              <br>
+            </div>
+          <div class="mb-3">
+            <label for="desc" class="form-label">Description</label>
+            <input type="text" class="form-control" formControlName="description" name="description" >
+            <div *ngIf="this.productEditForm.get('description')?.touched && f.description.errors?.required" class="error">Can not be Empty
+            </div>
+            
+            <br>
+          </div>
+          <div class="mb-3">
+            
+            <label for="unitPrice" class="form-label">unitPrice</label>
+            <input type="text" class="form-control" id="unitPrice" formControlName="unitPrice" name="unitPrice" >
+            <div *ngIf="this.productEditForm.get('unitPrice')?.touched && f.unitPrice.errors?.required" class="error">Can not be Empty
+            </div>
+            <br>
+          </div>
+          <div class="mb-3">
+            
+            <label for="msrp" class="form-label">msrp</label>
+            <input type="text" class="form-control" id="msrp" formControlName="msrp" name="msrp" >
+            <div *ngIf="this.productEditForm.get('msrp')?.touched && f.msrp.errors?.required" class="error">Can not be Empty
+            </div>
+            <br>
+          </div>
+          <div class="mb-3">
+            
+            <label for="size" class="form-label">size</label>
+            <input type="text" class="form-control" id="size" formControlName="size" name="size" >
+            <div *ngIf="this.productEditForm.get('size')?.touched && f.size.errors?.required" class="error">Can not be Empty
+            </div>
+            <br>
+          </div>
+          <div class="mb-3">
+            
+            <label for="color" class="form-label">color</label>
+            <input type="text" class="form-control" id="color" formControlName="color" name="color" >
+            <div *ngIf="this.productEditForm.get('color')?.touched && f.color.errors?.required" class="error">Can not be Empty
+            </div>
+            <br>
+          </div>
+          <div class="mb-3">
+            
+            <label for="color" class="form-label">Category</label>
+            <input type="text" class="form-control" id="category" formControlName="category" name="category" >
+            <div *ngIf="this.productEditForm.get('category')?.touched && f.category.errors?.required" class="error">Can not be Empty
+            </div>
+            <br>
+          </div>
+
+          <div class="mb-3">
+            
+            <label for="size" class="form-label">Stock</label>
+            <input type="number" class="form-control" id="stock" formControlName="stock" name="stock" >
+            <div *ngIf="this.productEditForm.get('stock')?.touched && f.stock.errors?.required" class="error">Can not be Empty
+            </div>
+            <br>
+          </div>
+
+          <div class="form-group">
+            <label for="file">Image Upload:</label>
+            <input type="file" class="form-control" accept="image/*" (change)="onSelectFile($event)" style="height: 100%;">
+          </div>
+          
+          
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      
+      </div>
+      <div class="col"></div>
+    </div>

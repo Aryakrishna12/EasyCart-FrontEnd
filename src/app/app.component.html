@@ -1,0 +1,94 @@
+
+<mat-toolbar style="background-color: rgb(86, 84, 185);">
+  <span class="text-light">EASY CART</span>
+
+  <div class="form-group">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-md-12">
+          <div class="search">
+            <input type="text" [(ngModel)]="searchTerm" class="form-control" placeholder="Search Products..">
+             <button class="btn btn-primary" (click)="searchByName(searchTerm)">
+               <mat-icon>search</mat-icon>
+            </button>
+          </div>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="example-spacer"></div>
+  <button mat-button *ngIf="!loginService.loggedIn()" (click)="loginDialog()" class="text-light">Login</button>
+  <mat-menu #appMenu="matMenu">
+    <button mat-menu-item>Orders</button>
+    <button mat-menu-item>Wishlist</button>
+    <button mat-menu-item>Profile</button>
+    <button mat-menu-item (click)="loginService.logoutUser()">Logout</button>
+  </mat-menu>
+  <a mat-button *ngIf="loginService.loggedIn()" [matMenuTriggerFor]="appMenu" class="text-light">
+    <mat-icon>account_circle</mat-icon>My Account</a>
+  <a mat-button *ngIf="loginService.loggedIn()" class="text-light">
+    <mat-icon>shopping_cart</mat-icon>Cart</a>
+     
+  <a mat-raised-button (click)="signupDialog()">SignUp</a>
+
+  
+
+</mat-toolbar>
+<br/><br/>
+<mat-toolbar>
+  <div class="container-fluid pt-3 my-3 border" >
+  <div class="row">
+    <div class="col-md-auto">
+      <img src="assets/images/mobile.jpeg/" (click)=" searchByCategory(this.m)" class="img-circle border-primary"  width="50" height="50">     
+      <p style="font-size: medium;font-family: 'Times New Roman', Times, serif;">Mobiles</p> 
+    </div>
+
+    <div class="col-md-auto">
+      <img src="assets/images/electronics.jpeg/" (click)=" searchByCategory(this.e)" class="img-circle"  width="50" height="50">     
+      <p style="font-size: medium;font-family: 'Times New Roman', Times, serif;">Electronics</p> 
+    </div>
+
+    <div class="col-md-auto">
+      <img src="assets/images/fashion.jpeg/" (click)=" searchByCategory(this.e)"  [matMenuTriggerFor]="fashionMenu" class="img-circle"  width="50" height="50">     
+      <p style="font-size: medium;font-family: 'Times New Roman', Times, serif;">Fashion</p>  
+    
+      <mat-menu #fashionMenu="matMenu">
+        <button mat-menu-item (click)=" searchByCategory(this.ku)">Kurthis</button>
+        <button mat-menu-item (click)=" searchByCategory(this.sh)">Shirts</button>
+        <button mat-menu-item (click)=" searchByCategory(this.je)">Jeans</button>
+        <button mat-menu-item (click)=" searchByCategory(this.s)">Shoes</button>     
+      </mat-menu>
+    </div>
+
+    <div class="col-md-auto">
+      <img src="assets/images/appliances.jpeg/" (click)=" searchByCategory(this.e)" [matMenuTriggerFor]="appliancesMenu" class="img-circle"  width="50" height="50">     
+      <p style="font-size: medium;font-family: 'Times New Roman', Times, serif;">Appliances</p>  
+    
+      <mat-menu #appliancesMenu="matMenu">
+        <button mat-menu-item (click)=" searchByCategory(this.r)">Refrigerator</button>
+        <button mat-menu-item (click)=" searchByCategory(this.wm)">Whasing Machines</button>
+        <button mat-menu-item (click)=" searchByCategory(this.ac)">Air Conditioners</button>
+        <button mat-menu-item (click)=" searchByCategory(this.mw)">Microwaves</button>
+        <button mat-menu-item (click)=" searchByCategory(this.ka)">Kitchen Appliances</button>
+      </mat-menu>
+    </div>
+  </div>   
+  </div>
+</mat-toolbar>
+<br/><br/>
+ 
+
+
+<div class="row ">
+  <div class="col-md-4" *ngFor="let p of productsCategory">
+    <app-product-filter-category [productDetailsByCategory]="p"></app-product-filter-category>   
+</div>
+
+<div class="row "></div>
+  <div class="col-md-4" *ngFor="let p of productsName">
+    <app-product-filter [productDetails]="p"></app-product-filter>   
+
+</div>  
+
+
+
+  <router-outlet></router-outlet>

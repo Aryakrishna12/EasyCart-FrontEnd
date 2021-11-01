@@ -1,0 +1,22 @@
+<mat-toolbar>
+
+  <mat-icon>shopping_cart</mat-icon>
+  <span>Today's Purchase</span>
+  <div class=form-group>
+    <form [formGroup]="purchaseForm" (ngSubmit)="onSubmit()">
+      <input type="date" formControlName="date">
+    <button >Search</button>
+    </form>
+  </div>
+
+<div class="example-spacer"></div>
+</mat-toolbar>
+<table style="margin-left: 50%;">
+  <tr>
+    <th>Item Name</th>
+  </tr>
+  <tr *ngFor="let cnt of purchaseList ">
+    <td>{{cnt}}</td>
+  </tr>
+</table>
+  

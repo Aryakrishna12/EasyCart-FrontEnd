@@ -1,0 +1,9 @@
+.container{
+    box-shadow: beige;
+    border-radius: 6px;
+    border: black;
+}
+.mat-raised-button{
+    font-size: large;
+    background-color: rgb(255, 123, 0);
+}

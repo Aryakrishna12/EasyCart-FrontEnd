@@ -1,0 +1,13 @@
+<h2>Notifications....</h2>
+<div class="row"></div>
+<div *ngFor="let p of message">
+    <mat-card>
+        <p>
+            <img style="width: 50px;height: 50px;" src="{{rImage}}{{p.product.image}}" alt="" />  
+            <b>{{p.customer.name}}</b> {{p.message}}ed  new stock-
+            <b>{{p.product.productName}} </b> on {{p.createDate}}
+          </p>
+    </mat-card>
+  
+   
+</div>

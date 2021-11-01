@@ -1,0 +1,102 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-7">
+        <h2 style="padding-left: 150px;">Delevary Details</h2>
+        <form [formGroup]="addressForm" (ngSubmit)="onSubmit">
+            <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="fill">
+                      <mat-label>FirstName</mat-label>
+                      <input matInput formControlName="firstName">
+                      <mat-error *ngIf="addressForm.get('firstName').errors?.required ">first name is required</mat-error> 
+                      <mat-error *ngIf="addressForm.get('firstName').errors?.maxlength ">cannot exceed 30 letters</mat-error>   
+                  </mat-form-field><br/>
+                </div>
+                <div class="col">
+                  <mat-form-field appearance="fill">
+                      <mat-label>LastName</mat-label>
+                      <input matInput formControlName="lastName">
+                      <mat-error *ngIf="addressForm.get('lastName').errors?.required ">last name is required</mat-error> 
+                      <mat-error *ngIf="addressForm.get('lastName').errors?.maxlength ">cannot exceed 30 letters</mat-error>
+                  </mat-form-field><br/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="fill">
+                      <mat-label>Address</mat-label>
+                      <input matInput formControlName="address">
+                      <mat-error *ngIf="addressForm.get('address').errors?.required ">Address is required</mat-error> 
+                      <mat-error *ngIf="addressForm.get('address').errors?.maxlength ">cannot exceed 200 letters</mat-error>
+                  </mat-form-field><br/>
+                </div>
+                <div class="col">
+                  <mat-form-field appearance="fill">
+                      <mat-label>City</mat-label>
+                      <input matInput formControlName="city">
+                      <mat-error *ngIf="addressForm.get('city').errors?.required ">city is required</mat-error> 
+                      <mat-error *ngIf="addressForm.get('city').errors?.maxlength ">cannot exceed 50 letters</mat-error>
+                  </mat-form-field><br/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="fill">
+                      <mat-label>Landmark</mat-label>
+                      <input matInput formControlName="landmark">
+                      <mat-error *ngIf="addressForm.get('landmark').errors?.required ">landmark is required</mat-error> 
+                      <mat-error *ngIf="addressForm.get('landmark').errors?.maxlength ">cannot exceed 50 letters</mat-error>
+                  </mat-form-field><br/>
+                </div>
+                <div class="col">
+                  <mat-form-field appearance="fill">
+                      <mat-label>State</mat-label>
+                      <input matInput formControlName="state">
+                      <mat-error *ngIf="addressForm.get('state').errors?.required ">state is required</mat-error> 
+                      <mat-error *ngIf="addressForm.get('state').errors?.maxlength ">cannot exceed 50 letters</mat-error>
+                  </mat-form-field><br/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="fill">
+                      <mat-label>Country</mat-label>
+                      <input matInput formControlName="country">
+                      <mat-error *ngIf="addressForm.get('country').errors?.required ">country is required</mat-error> 
+                      <mat-error *ngIf="addressForm.get('country').errors?.maxlength ">cannot exceed 50 letters</mat-error>
+                  </mat-form-field><br/>
+                </div>
+                <div class="col">
+                  <mat-form-field appearance="fill">
+                      <mat-label>Pincode</mat-label>
+                      <input matInput formControlName="pinCode">
+                      <mat-error *ngIf="addressForm.get('pinCode').errors?.required ">pincode is required</mat-error> 
+                      <mat-error *ngIf="addressForm.get('pinCode').errors?.maxlength ">cannot exceed 6 letters</mat-error>
+                  </mat-form-field><br/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="fill">
+                      <mat-label>Phone</mat-label>
+                      <input matInput formControlName="phone">
+                      <mat-error *ngIf="addressForm.get('phone').errors?.required ">phone no is required</mat-error>
+                  </mat-form-field><br/>
+                </div>
+                <div class="col">
+                  <mat-form-field appearance="fill">
+                      <mat-label>Email</mat-label>
+                      <input matInput formControlName="email">
+                      <mat-error *ngIf="addressForm.get('email').errors?.required ">email is required</mat-error>
+                      <mat-error *ngIf="addressForm.get('phone').errors?.invalid">invalid email address</mat-error>
+                  </mat-form-field><br/>
+                </div>
+            </div>
+            <button mat-raised-button style="margin-left: 220px; background-color: deeppink;" (click)="onSubmit()">Confirm Order</button><br/>
+        </form>
+    </div>
+    <div class="col-4">
+      <h2 style="padding-left: 80px;">Item Details</h2>
+    </div>
+  </div>
+</div>

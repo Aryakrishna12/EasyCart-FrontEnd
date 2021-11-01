@@ -1,0 +1,13 @@
+
+
+
+.outer-container{
+    padding: 5px;
+    border: 1px solid #b6b6bb;
+    box-sizing: content-box;
+}
+
+div.container > div{
+    height: 200px;
+    width: 130px;
+}

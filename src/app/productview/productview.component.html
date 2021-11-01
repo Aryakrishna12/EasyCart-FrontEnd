@@ -1,0 +1,35 @@
+<h2 align="center" class="display-4 mb-5">Product Details</h2>
+<button (click)="addProduct()">Add</button>
+<table class="table table hover" >
+    <tr>
+      
+        <th scope="col">Photo</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">unitPrice</th>
+        <th scope="col">Category</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+        
+    </tr>
+    <tr *ngFor="let cnt of products ">
+        <th class="align-middle" scope="row">
+            <img src="{{rImage}}{{cnt.image}}" alt="Image here" style="width: 100px;height: 100px;">
+        </th>
+        <td class="align-middle">{{cnt.productName}}</td>
+        <td class="align-middle">{{cnt.description}}</td>
+        <td class="align-middle">{{cnt.unitPrice}}</td>
+        <td class="align-middle">{{cnt.category}}</td>
+        <td class="align-middle">{{cnt.stock}}</td>
+        <td class="align-middle">
+            <button (click)="editProduct(cnt.productId)">Edit</button>
+        </td>
+        <td class="align-middle">
+            <button (click)="deleteProduct(cnt.productId)">Delete</button>
+        </td>
+    
+    </tr>
+    
+</table>
+

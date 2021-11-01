@@ -1,0 +1,47 @@
+<!--
+   <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <span class="md-title">{{ allProductDetails.productName }}</span>
+        </mat-card-title>
+      </mat-card-header>
+      <a (click)="detailPage()">
+      <img class="img-fluid center-block" src="{{rImage}}{{allProductDetails.image}}" alt="Image here" style="width: 100px;height: 100px;">
+      </a> 
+      <mat-card-title>
+        <mat-card-subtitle>
+          
+          <span style="font-weight: bold;color: red;">Price: {{ allProductDetails.unitPrice }} </span><span style="margin-left:10px"></span>
+          
+        </mat-card-subtitle>
+      </mat-card-title>
+    </mat-card>   -->
+
+    <div class="outer-container">
+      <div fxLayout="row" fxLayoutGap="20px" class="container">
+        <div fxLayoutAlign="center">
+          <img class="img-fluid center-block" src="{{rImage}}{{allProductDetails.image}}" alt="Image here" (click)="detailPage()" style="width: 200px;height: 200px;">
+        </div> 
+        <div fxLayout="column">
+          <p style=" font-family: sans-serif; color: rgb(10, 9, 9);"> {{ allProductDetails.productName }} </p>
+          <br/>
+          <p style="color: rgb(80, 153, 8); font-size: x-large; font-weight: 20px;">₹ {{allProductDetails.unitPrice}}</p>
+        </div>
+
+      </div>
+
+    </div>
+    <br/><br/>
+   
+ 
+  <!--   <div class="container-fluid border">
+      <div class="card" style="width: 200px; height: 250px;">
+      <a (click)="detailPage()" > 
+      <img class="card-img-top center-block" src="{{rImage}}{{allProductDetails.image}}" ></a>
+      <div>
+        <h3 >{{allProductDetails.productName}}</h3>
+        <h3>{{ allProductDetails.unitPrice }}</h3>
+      </div>
+      </div>
+    </div> 
+    <br/>-->

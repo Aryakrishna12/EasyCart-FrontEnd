@@ -1,0 +1,31 @@
+.center-block{
+   
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.img{
+   
+    object-fit:contain;
+}
+.container-fluid{
+    height: 300px;
+}
+.mat-card-title{
+  font: 1em sans-serif;
+  justify-content: center;
+ 
+}
+
+
+
+.outer-container{
+    padding: 5px;
+    border: 1px solid #b6b6bb;
+    box-sizing: content-box;
+}
+
+div.container > div{
+    height: 200px;
+    width: 130px;
+}

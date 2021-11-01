@@ -1,0 +1,19 @@
+.col-7{
+    border: 1px solid black;
+    margin-left: 10px;
+}
+.col-4{
+    border: 1px solid black;
+}
+.mat-raised-buttn{
+    background-color: rgb(255, 123, 0);
+}
+  
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: rgb(236, 42, 188) !important;
+   }
+   ::ng-deep.mat-form-field-input{
+    /*change color of underline*/
+    background-color: rgb(189, 39, 169) !important;
+  } 
